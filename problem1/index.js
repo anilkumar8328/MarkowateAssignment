@@ -1,11 +1,20 @@
 const http = require('http');
 const fs = require('fs');
 const express = require('express');
-const bodyParser = require('body-parser');
+
 
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 
+/*
+   send the data like this
+   {
+  "people": [
+    { "name": "Anil", "age": 23 },
+    { "name": "bhagwan", "age": 26 }
+  ]
+}
+ */
 app.post('/', (req, res) => {
   console.log('Received data:', req.body);
 
